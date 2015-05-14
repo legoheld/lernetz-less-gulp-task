@@ -11,7 +11,7 @@ It creates the following files:
 var gulp = require('gulp');
 var lessTask = require( 'lernetz-less-gulp-task' );
 
-gulp.task( 'less', lessTask( { name:'demo', desc:'public', src:'less/**/*.ts' } );
+gulp.task( 'less', lessTask( { name:'demo', desc:'public', src:'less/main.less' } ) );
 ```
 
 ## Options
