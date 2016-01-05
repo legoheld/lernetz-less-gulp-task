@@ -3,9 +3,11 @@ var less = require('gulp-less');
 var merge = require('merge');
 var sourcemaps = require('gulp-sourcemaps');
 var prefixer = require('gulp-autoprefixer');
-var minify = require('gulp-minify-css');
+var minify = require('gulp-cssnano');
 var concat = require('gulp-concat');
 var rename = require("gulp-rename");
+var plumber = require("gulp-plumber");
+var notify = require("gulp-notify");
 
 
 module.exports = function( options ) {
@@ -18,12 +20,13 @@ module.exports = function( options ) {
 		prefixer: { cascade: true }
 	}
 	// merge options with default values
-	options = merge( defaults, options );
+	options = merge.recursive( defaults, options );
 	
 	// return task function
 	return function() {
 		
 		return gulp.src( options.src )
+		.pipe( plumber( { errorHandler: notify.onError("Error: <%= error.message %>") } ) )
 		.pipe( sourcemaps.init() )
 	    .pipe( less( options.less ) )
 	    .pipe( prefixer( options.prefixer ) )
