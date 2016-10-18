@@ -34,6 +34,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.1.1",
+    "less-plugin-functions": "0.0.2",
     "merge": "^1.2.0"
   }
 }
