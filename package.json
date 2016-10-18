@@ -1,6 +1,6 @@
 {
   "name": "lernetz-less-gulp-task",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A gulp task that compiles less files including sourcemaps, minifies them and applies the autoprefixer postcss processor.",
   "main": "index.js",
   "scripts": {
