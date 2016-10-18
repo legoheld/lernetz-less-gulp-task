@@ -8,6 +8,7 @@ var concat = require('gulp-concat');
 var rename = require("gulp-rename");
 var plumber = require("gulp-plumber");
 var notify = require("gulp-notify");
+var lessFunctions = require("less-plugin-functions");
 
 
 module.exports = function( options ) {
@@ -16,7 +17,9 @@ module.exports = function( options ) {
 		src: 'less/main.less',
 		dest: 'public/css',
 		name: 'main',
-		less: {},
+		less: {
+			plugins: [ new lessFunctions ]
+		},
 		prefixer: { cascade: true }
 	}
 	// merge options with default values
