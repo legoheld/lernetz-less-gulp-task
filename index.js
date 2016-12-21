@@ -9,6 +9,7 @@ var rename = require("gulp-rename");
 var plumber = require("gulp-plumber");
 var notify = require("gulp-notify");
 var lessFunctions = require("less-plugin-functions");
+var lessGlob = require( "less-plugin-glob" );
 
 
 module.exports = function( options ) {
@@ -18,7 +19,7 @@ module.exports = function( options ) {
 		dest: 'public/css',
 		name: 'main',
 		less: {
-			plugins: [ new lessFunctions ]
+			plugins: [ new lessFunctions, lessGlob ]
 		},
 		prefixer: { cascade: true }
 	}
